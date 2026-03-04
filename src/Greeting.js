@@ -1,6 +1,6 @@
 import React from "react";
 
-function Greeting() {
+function Greeting({ username }) {
   const today = new Date().toDateString();
 
   const paragraphStyle = {
@@ -10,7 +10,7 @@ function Greeting() {
 
   return (
     <div>
-      <h1>Hello, Welcome to React!</h1>
+      <h1>Hello, {username}! Welcome to React!</h1>
       <p style={paragraphStyle}>
         Today’s date is: {today}
       </p>
