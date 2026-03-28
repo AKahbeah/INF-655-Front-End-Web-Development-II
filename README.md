@@ -68,3 +68,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# INF 655 Front-End Web Development II - Midterm Project
+
+This React application demonstrates key React concepts covered in the course, including:
+
+- JSX, Components, and Props  
+- State management (using hooks and class components)  
+- Lists, Keys, and Forms  
+- User interaction and dynamic UI updates  
+
+## Features Implemented
+
+1. **Greeting Component**  
+   - Accepts a `username` prop  
+   - Displays the current date dynamically  
+   - Includes a button to toggle the greeting message  
+
+2. **UserInfo Component**  
+   - Class component with state  
+   - Displays user information and a lucky number  
+   - Button to generate a new lucky number  
+
+3. **Task Management**  
+   - Add new tasks with validation  
+   - Search tasks dynamically  
+   - Sort tasks alphabetically  
+   - Delete tasks with a confirmation prompt  
+
+## How to Run
+
+```bash
+npm install
+npm start
