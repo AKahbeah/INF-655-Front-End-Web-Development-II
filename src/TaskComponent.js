@@ -2,50 +2,79 @@ import React, { useState } from "react";
 
 function TaskComponent({ tasks, addTask, deleteTask }) {
   const [taskName, setTaskName] = useState("");
+  const [taskDescription, setTaskDescription] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Add task (Firebase version)
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!taskName.trim()) return alert("Task name cannot be empty");
-    addTask({ id: Date.now(), name: taskName });
+
+    if (!taskName.trim()) {
+      alert("Task name cannot be empty");
+      return;
+    }
+
+    addTask(taskName, taskDescription);
+
     setTaskName("");
+    setTaskDescription("");
   };
 
-  const filteredTasks = tasks.filter(task =>
-    task.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // Filter tasks
+  const filteredTasks = tasks.filter((task) =>
+    task.taskName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleSort = () => {
-    tasks.sort((a, b) => a.name.localeCompare(b.name));
-  };
+  // Sort WITHOUT mutating props
+  const sortedTasks = [...filteredTasks].sort((a, b) =>
+    a.taskName.localeCompare(b.taskName)
+  );
 
   return (
     <div>
+      <h2>Task Manager</h2>
+
+      {/* ADD TASK FORM */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Enter Task Name"
+          placeholder="Task Name"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
         />
+
+        <input
+          type="text"
+          placeholder="Task Description"
+          value={taskDescription}
+          onChange={(e) => setTaskDescription(e.target.value)}
+        />
+
         <button type="submit">Add Task</button>
       </form>
 
+      {/* SEARCH */}
       <input
         type="text"
         placeholder="Search Tasks"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button onClick={handleSort}>Sort by Name</button>
 
+      {/* TASK LIST */}
       <ul>
-        {filteredTasks.map(task => (
+        {sortedTasks.map((task) => (
           <li key={task.id}>
-            {task.name}{" "}
-            <button onClick={() => {
-              if (window.confirm("Are you sure to delete this task?")) deleteTask(task.id);
-            }}>
+            <strong>{task.taskName}</strong>
+            <p>{task.taskDescription}</p>
+
+            <button
+              onClick={() => {
+                if (window.confirm("Are you sure you want to delete this task?")) {
+                  deleteTask(task.id);
+                }
+              }}
+            >
               Delete
             </button>
           </li>
