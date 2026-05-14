@@ -1,11 +1,10 @@
 📘 Plate Planner
-Project Title
 
+Project Title
 Plate Planner – Weekly Meal Planning Application
 
 👤 Student Name
-
-Your Name Here
+Amy Kahbeah
 
 📌 Project Description
 
@@ -26,6 +25,7 @@ Auto-generated grocery list from meal ingredients
 User-specific meal data using Firebase UID
 Responsive navigation bar
 Conditional rendering based on login status
+
 ⚛️ React Concepts Used
 Functional components
 useState (state management)
@@ -37,6 +37,7 @@ Lists and .map() rendering
 React Router for navigation
 Controlled forms
 Context API for authentication
+
 🔥 Firebase Integration
 
 This project uses Firebase for backend services:
@@ -77,6 +78,7 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
+
 🧠 Key Functionality
 Weekly Meal Planner
 
@@ -104,12 +106,14 @@ Weekly grid layout for meal organization
 Category-based meal labeling
 Responsive navigation bar
 Mobile-friendly layout structure
+
 ⚠️ Challenges Faced
 Managing authentication state across multiple pages
 Ensuring user-specific data filtering in Firestore
 Structuring meals by day of the week
 Generating a combined grocery list from multiple meals
 Handling asynchronous data fetching with Firebase
+
 📚 What I Learned
 Building a full React application from scratch
 Using React Router for multi-page navigation
@@ -117,6 +121,7 @@ Managing authentication with Firebase
 Performing CRUD operations with Firestore
 Using Context API for global state management
 Structuring a scalable React project
+
 🚀 Future Improvements
 Add drag-and-drop meal scheduling
 Improve grocery list with quantities
@@ -124,6 +129,7 @@ Add meal images
 Add progress tracking (meals completed vs planned)
 Improve UI using Tailwind CSS or a UI library
 Add search and filtering for meals
+
 🌐 Deployment
 Live Site: (add link here)
 GitHub Repository: (add link here)
